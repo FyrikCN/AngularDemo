@@ -5,7 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css'],
   template:`
-    <button class="btn btn-primary">Save</button>
+    <div (click)="onDivClick()">
+    <button 
+      class="btn btn-primary" 
+      [class.active]="isActive" 
+      [style.backgroundColor]="isActive ? 'blue' : 'green'"
+      (click)="onSave($event)" 
+    >Save</button>
+    </div>
     <table>
       <tr>
         <td [attr.colspan]="colSpan"></td>
@@ -15,7 +22,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseComponent{
 
+  isActive = false;
   colSpan = 2;
+
+  onDivClick() {
+    console.log("Div was clicked.");
+  }
+
+  onSave($event) {
+    $event.stopPropagation();
+    console.log("Button was clicked.", $event);
+  }
   constructor() { }
 
 }
