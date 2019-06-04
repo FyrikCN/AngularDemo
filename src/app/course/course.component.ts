@@ -5,45 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css'],
   template:`
-    <input class="inputBox" (keyup.enter)="onKeyUp($event)"/> <br/>
-    <input class="inputBox" #text (keyup.enter)="onKeyUp2(text.value)">
-    <div (click)="onDivClick()">
-    <button 
-      class="btn btn-primary" 
-      [class.active]="isActive" 
-      [style.backgroundColor]="isActive ? 'blue' : 'green'"
-      (click)="onSave($event)" 
-    >Save</button>
-    </div>
-    <table>
-      <tr>
-        <td [attr.colspan]="colSpan"></td>
-      </tr>
-    </table>
+    <input [(ngModel)]="email" (keyup.enter)="onKeyUp()">
   `
 })
 export class CourseComponent{
 
-  isActive = false;
-  colSpan = 2;
-
-  onKeyUp($event) {
-    console.log("Enter was pressed: ", $event.target.value);
+  email = "fyrik@gmail.com";
+  onKeyUp() {
+    console.log("Enter was pressed: ", this.email);
   }
-
-  onKeyUp2(text) {
-    console.log("Enter2 was pressed: ", text);
-  }
-
-  onDivClick() {
-    console.log("Div was clicked.");
-  }
-
-  onSave($event) {
-    $event.stopPropagation();
-    this.isActive = true;
-    console.log("Button was clicked.", $event);
-  }
-  constructor() { }
 
 }
