@@ -1,0 +1,4 @@
+For date pipes in angular, go to Angular official website and search for date pipes.
+
+Angular 2 and onwards have dropped these two filters: Orderby and Filters, due to delivery reason.
+These two are expensive functions.
