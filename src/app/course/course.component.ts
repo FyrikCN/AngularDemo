@@ -6,30 +6,26 @@ import { MaxLengthValidator } from '@angular/forms';
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css'],
   template:`
-  <ul>
-    <li>{{ fyrik.name | uppercase | lowercase }}</li>
-    <li>{{ fyrik.age | number:'3.0' }}</li>
-    <li>{{ fyrik.gender }}</li>
-    <li>{{ fyrik.height | number:'3.0-0' }}</li>
-    <li>{{ fyrik.carPrice | currency:'NZD':true:'4.2' }}</li>
-    <li>{{ fyrik.carOdometer }}</li>
-    <li>{{ fyrik.releaseDate | date:shortDate }}</li>
-  <ul>
+  <h2>{{ title }}</h2>
+  <p>{{ article | summary:20 }}</p>
+  <i [class]="(isFavorite)? 'fa-star fas' : 'fa-star far'"
+    (click)="onClick()">
+  </i>
+  <h4>Demo</h4>
+  <i class="fa-star"
+     [class.fas]="isFavorite"
+     [class.far]="!isFavorite"
+     (click)="onClick()">
+  </i>
   `
 })
 export class CourseComponent{
+  title = "Angular Practice - Homework2";
 
-  fyrik = {
-    name: "Fyrik",
-    age: 24,
-    gender: "male",
-    height: 170.05,
-    carPrice: 4400,
-    carOdometer: 110785,
-    releaseDate: new Date(1994,7,12) 
-    // For all date pipes used in HTML,
-    // go to angular official website and 
-    // search for "date pipes".
+  isFavorite = true;
+
+  onClick() {
+    this.isFavorite = !this.isFavorite;
+    //this.isFavorite = this.isFavorite ? false : true; 
   }
-
 }

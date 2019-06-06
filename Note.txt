@@ -1,3 +1,7 @@
+To start a Git repository from local project,
+git remote add origin https://github.com/FyrikCN/AngularDemo.git
+git push -u origin master
+
 For date pipes in angular, go to Angular official website and search for date pipes.
 
 Angular 2 and onwards have dropped these two filters: Orderby and Filters, due to delivery reason.
