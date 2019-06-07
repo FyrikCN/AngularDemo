@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
 import { SummaryPipe } from './summarize.pipe';
+import { TitleCasePipe } from './title-case.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SummaryPipe } from './summarize.pipe';
     CoursesComponent,
     CourseComponent,
     AuthorsComponent,
-    SummaryPipe
+    SummaryPipe,
+    TitleCasePipe
   ],
   imports: [
     BrowserModule,

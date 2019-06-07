@@ -6,26 +6,15 @@ import { MaxLengthValidator } from '@angular/forms';
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css'],
   template:`
-  <h2>{{ title }}</h2>
-  <p>{{ article | summary:20 }}</p>
-  <i [class]="(isFavorite)? 'fa-star fas' : 'fa-star far'"
-    (click)="onClick()">
-  </i>
-  <h4>Demo</h4>
-  <i class="fa-star"
-     [class.fas]="isFavorite"
-     [class.far]="!isFavorite"
-     (click)="onClick()">
-  </i>
+    <h2>{{ title }}</h2>
+      <input type="text" [(ngModel)]="movieName"/>
+      <br>
+      {{ movieName | titleCase }}
   `
 })
 export class CourseComponent{
-  title = "Angular Practice - Homework2";
+  title = "Angular Practice - Homework2.2";
 
-  isFavorite = true;
+  movieName = "Aladdin";
 
-  onClick() {
-    this.isFavorite = !this.isFavorite;
-    //this.isFavorite = this.isFavorite ? false : true; 
-  }
 }
