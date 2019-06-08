@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'titleCase'
+  name: 'titleCase' // Camel
 })
 export class TitleCasePipe implements PipeTransform {
 
