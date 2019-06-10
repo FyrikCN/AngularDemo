@@ -11,4 +11,8 @@ export class AppComponent {
     postTitle: "postTitle",
     isFavorate: true
   }
+
+  onFavorateChange() {
+    console.log("Favorate clicked.");
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'favorate',
@@ -7,13 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FavorateComponent implements OnInit {
 
+  @Input('is-favorate') isFavorate = false;
+  @Output() change = new EventEmitter();//the name of the field should be exactly
+                     //the same as the event we want to raise(change)
+  onClick() {
+    this.isFavorate = !this.isFavorate;
+    this.change.emit();
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  @Input() isFavorate = false;
-  onClick() {
-    this.isFavorate = !this.isFavorate;
-  }
 }
