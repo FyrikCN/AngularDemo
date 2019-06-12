@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { favObject } from './favorate/favorate.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
     isFavorate: true
   }
 
-  onFavorateChange() {
-    console.log("Favorate clicked.");
+  onFavorateChange(favorateBoolean: favObject) {
+    console.log("Favorate clicked: ", favorateBoolean.emitValue);
   }
 }

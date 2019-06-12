@@ -1,23 +1,23 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'favorate',
   templateUrl: './favorate.component.html',
-  styleUrls: ['./favorate.component.css']
+  styleUrls: ['./favorate.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
-export class FavorateComponent implements OnInit {
+export class FavorateComponent {
 
   @Input('is-favorate') isFavorate = false;
   @Output() change = new EventEmitter();//the name of the field should be exactly
                      //the same as the event we want to raise(change)
   onClick() {
     this.isFavorate = !this.isFavorate;
-    this.change.emit();
+    this.change.emit({emitValue: this.isFavorate});
   }
 
-  constructor() { }
+}
 
-  ngOnInit() {
-  }
-
+export interface favObject {
+  emitValue: boolean
 }

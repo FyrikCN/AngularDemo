@@ -3,4 +3,8 @@
 <app-course></app-course>
 <!--authors></authors-->
 <br>
-<favorate [is-favorate]="post.isFavorate" (change)="onFavorateChange()"></favorate>
+<favorate 
+[is-favorate]="post.isFavorate" 
+(change)="onFavorateChange($event)"
+></favorate>
+<span class="fas fa-comment-dots"></span>

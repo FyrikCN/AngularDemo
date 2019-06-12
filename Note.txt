@@ -8,3 +8,5 @@ Angular 2 and onwards have dropped these two filters: Orderby and Filters, due t
 These two are expensive functions.
 
 When declaring a field in [inputs] property under @Componentes, Angular creates this field with initializing it to true.
+
+"Emulated" is the defalt value of ViewEncapsulation which prevents styles from leaking out of the component.
