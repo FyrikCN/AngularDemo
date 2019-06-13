@@ -1,10 +1,8 @@
 <h1>Angular</h1>
-<!--courses></courses>-->
-<app-course></app-course>
-<!--authors></authors-->
-<br>
-<favorate 
-[is-favorate]="post.isFavorate" 
-(change)="onFavorateChange($event)"
-></favorate>
-<span class="fas fa-comment-dots"></span>
+<bootstrap-panel>
+    <ng-container class="header">Header</ng-container>
+    <div class="body">
+        <h2>Body</h2>
+        <p>Text of body here</p>
+    </div>
+</bootstrap-panel>
