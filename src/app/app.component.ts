@@ -1,3 +1,4 @@
+import { likeObject } from './like/like.component';
 import { Component } from '@angular/core';
 import { favObject } from './favorate/favorate.component';
 
@@ -11,16 +12,16 @@ export class AppComponent {
   post = {
     postTitle: "postTitle",
     isFavorate: true
-  }
+  };
 
-  counts = 0;
+  tweet = {
+    post: "...",
+    isLiked: false,
+    likesCount: 10
+  }
 
   onFavorateChange(favorateBoolean: favObject) {
     console.log("Favorate clicked: ", favorateBoolean.emitValue);
   }
 
-  onTwitterChange(obj) {
-    this.counts = obj.emitCount;
-    console.log("Like button clicked:", obj.emitIsLiked, obj.emitCount);
-  }
 }

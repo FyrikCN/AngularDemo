@@ -7,15 +7,17 @@ import { Component, Output, Input, EventEmitter } from '@angular/core';
 })
 export class LikeComponent {
 
-  @Input() likesCount = 0;
-  @Input() isLiked = false;
-
-  @Output() change = new EventEmitter();
+  @Input() likesCount: number;
+  @Input() isLiked: boolean;
   
   onClick() {
     this.isLiked = !this.isLiked;
     this.likesCount += this.isLiked? 1 : -1;
-    this.change.emit({emitIsLiked: this.isLiked, emitCount: this.likesCount});
   }
 
+}
+
+export interface likeObject {
+  emitIsLiked: boolean,
+  emitCount: number
 }

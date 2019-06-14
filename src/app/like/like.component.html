@@ -1,1 +1,2 @@
-<span [class]="(isLiked)? 'fas fa-heart' : 'far fa-heart'" (click)="onClick()">
+<span [class.liked]="isLiked" class="fas fa-heart" (click)="onClick()"></span>
+<span>{{ likesCount }}</span>
