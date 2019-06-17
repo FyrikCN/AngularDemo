@@ -10,3 +10,6 @@ These two are expensive functions.
 When declaring a field in [inputs] property under @Componentes, Angular creates this field with initializing it to true.
 
 "Emulated" is the defalt value of ViewEncapsulation which prevents styles from leaking out of the component.
+
+When the tree is small, use hidden property to load the whole tree to make toggle function faster.
+Otherwise, use ngIf to load a part of a tree as it's not so costly.

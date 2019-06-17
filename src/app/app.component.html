@@ -1,4 +1,15 @@
 <h1>Angular</h1>
+<div *ngIf="audience.length > 0; then hasAudience else noAudience">
+</div>
+<ng-template #hasAudience>
+    <h2>List of audience:</h2>
+    <li *ngFor="let people of audience">
+        <ul>{{ people }}</ul>
+    </li></ng-template>
+<ng-template #noAudience>
+    <h2>No audience yet.</h2>
+</ng-template>
+<!--
 <bootstrap-panel>
     <ng-container class="header">Header</ng-container>
     <div class="body">
@@ -11,3 +22,4 @@
 [isLiked]="tweet.isLiked">
 </twitter-like>
 <p>{{ counts }}</p>
+-->

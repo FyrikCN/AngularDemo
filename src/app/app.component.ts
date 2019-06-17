@@ -8,6 +8,8 @@ import { favObject } from './favorate/favorate.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  audience = ["Fyrik", "Koko"];
+  /*
   title = 'ngdemo';
   post = {
     postTitle: "postTitle",
@@ -23,5 +25,5 @@ export class AppComponent {
   onFavorateChange(favorateBoolean: favObject) {
     console.log("Favorate clicked: ", favorateBoolean.emitValue);
   }
-
+*/
 }
