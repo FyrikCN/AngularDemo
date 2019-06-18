@@ -9,6 +9,7 @@ import { favObject } from './favorate/favorate.component';
 })
 export class AppComponent {
   audience = ["Fyrik", "Koko"];
+  viewType = "other";
   /*
   title = 'ngdemo';
   post = {

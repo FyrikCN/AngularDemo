@@ -9,6 +9,21 @@
 <ng-template #noAudience>
     <h2>No audience yet.</h2>
 </ng-template>
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link" [class.active]="viewType == 'map'"
+        (click)="viewType='map'">Map View</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [class.active]="viewType == 'list'"
+        (click)="viewType='list'">List View</a>
+    </li>
+</ul>
+<div [ngSwitch]="viewType">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>
 <!--
 <bootstrap-panel>
     <ng-container class="header">Header</ng-container>
