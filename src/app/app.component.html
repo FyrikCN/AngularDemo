@@ -9,6 +9,10 @@
 <ng-template #noAudience>
     <h2>No audience yet.</h2>
 </ng-template>
+<ul *ngFor="let obj of arrayOfObjs; index as i; even as isEven">
+    <li>{{ i }} {{ obj.gender }}<span *ngIf="isEven"> EVEN</span></li>
+</ul>
+<!--
 <ul class="nav nav-pills">
     <li class="nav-item">
         <a class="nav-link" [class.active]="viewType == 'map'"
@@ -24,7 +28,7 @@
     <div *ngSwitchCase="'list'">List View Content</div>
     <div *ngSwitchDefault>Otherwise</div>
 </div>
-<!--
+
 <bootstrap-panel>
     <ng-container class="header">Header</ng-container>
     <div class="body">
