@@ -1,4 +1,12 @@
 <h1>Angular</h1>
+<button (click)="onAddClick()">Add</button>
+<ul *ngFor="let obj of arrayOfObjs; index as i; even as isEven">
+    <li>{{ i }} - {{ obj.name }}
+        <span *ngIf="isEven"> EVEN</span>
+        <button (click)="onRemoveClick(obj)">Remove</button>
+    </li>
+</ul>
+<!--
 <div *ngIf="audience.length > 0; then hasAudience else noAudience">
 </div>
 <ng-template #hasAudience>
@@ -9,10 +17,7 @@
 <ng-template #noAudience>
     <h2>No audience yet.</h2>
 </ng-template>
-<ul *ngFor="let obj of arrayOfObjs; index as i; even as isEven">
-    <li>{{ i }} {{ obj.gender }}<span *ngIf="isEven"> EVEN</span></li>
-</ul>
-<!--
+
 <ul class="nav nav-pills">
     <li class="nav-item">
         <a class="nav-link" [class.active]="viewType == 'map'"

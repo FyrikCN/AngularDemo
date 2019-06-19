@@ -8,12 +8,22 @@ import { favObject } from './favorate/favorate.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  audience = ["Fyrik", "Koko"];
   arrayOfObjs = [
     {name: "Fyrik", gender: "male"},
     {name: "Koko", gender: "female"},
     {name: "Uzi", gender: "unknown"}
   ];
+
+  onAddClick() {
+    this.arrayOfObjs.push({name: "Bill Gates", gender: "male"});
+  }
+
+  onRemoveClick(obj) {
+    let index = this.arrayOfObjs.indexOf(obj);
+    this.arrayOfObjs.splice(index, 1);
+  }
+  /*
+  audience = ["Fyrik", "Koko"];
   viewType = "other";
   /*
   title = 'ngdemo';
