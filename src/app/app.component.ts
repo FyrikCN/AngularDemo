@@ -8,12 +8,22 @@ import { favObject } from './favorate/favorate.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  arrayOfObjs = [
-    {name: "Fyrik", gender: "male"},
-    {name: "Koko", gender: "female"},
-    {name: "Uzi", gender: "unknown"}
-  ];
 
+  arrayOfObjs;
+
+  getCourses() {
+    this.arrayOfObjs = [
+      {name: "Fyrik", gender: "male"},
+      {name: "Koko", gender: "female"},
+      {name: "Uzi", gender: "unknown"}
+    ];
+  }
+
+  trackCourse(index, course) {
+    return course? course.id : undefined;
+  }
+  
+  /*
   onAddClick() {
     this.arrayOfObjs.push({name: "Bill Gates", gender: "male"});
   }
@@ -21,6 +31,10 @@ export class AppComponent {
   onRemoveClick(obj) {
     let index = this.arrayOfObjs.indexOf(obj);
     this.arrayOfObjs.splice(index, 1);
+  }
+
+  onChangeClick(obj) {
+    obj.name = "Name changed.";
   }
   /*
   audience = ["Fyrik", "Koko"];

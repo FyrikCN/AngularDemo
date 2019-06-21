@@ -1,9 +1,7 @@
 <h1>Angular</h1>
-<button (click)="onAddClick()">Add</button>
-<ul *ngFor="let obj of arrayOfObjs; index as i; even as isEven">
-    <li>{{ i }} - {{ obj.name }}
-        <span *ngIf="isEven"> EVEN</span>
-        <button (click)="onRemoveClick(obj)">Remove</button>
+<button (click)="getCourses()">Get Course</button>
+<ul>
+    <li *ngFor="let obj of arrayOfObjs; trackBy: trackCourse">{{ i }} - {{ obj.name }}
     </li>
 </ul>
 <!--
