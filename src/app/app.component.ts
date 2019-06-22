@@ -10,6 +10,12 @@ import { favObject } from './favorate/favorate.component';
 export class AppComponent {
 
   arrayOfObjs;
+  partlyEmptyObj = {
+    title: "title",
+    innerObj: {
+      name: "name"
+    }
+  };
 
   getCourses() {
     this.arrayOfObjs = [
@@ -22,7 +28,7 @@ export class AppComponent {
   trackCourse(index, course) {
     return course? course.id : undefined;
   }
-  
+
   /*
   onAddClick() {
     this.arrayOfObjs.push({name: "Bill Gates", gender: "male"});

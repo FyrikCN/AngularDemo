@@ -4,6 +4,7 @@
     <li *ngFor="let obj of arrayOfObjs; trackBy: trackCourse">{{ i }} - {{ obj.name }}
     </li>
 </ul>
+<span>{{ partlyEmptyObj.outerObj?.name }}</span>
 <!--
 <div *ngIf="audience.length > 0; then hasAudience else noAudience">
 </div>
