@@ -25,41 +25,4 @@ export class AppComponent {
     ];
   }
 
-  trackCourse(index, course) {
-    return course? course.id : undefined;
-  }
-
-  /*
-  onAddClick() {
-    this.arrayOfObjs.push({name: "Bill Gates", gender: "male"});
-  }
-
-  onRemoveClick(obj) {
-    let index = this.arrayOfObjs.indexOf(obj);
-    this.arrayOfObjs.splice(index, 1);
-  }
-
-  onChangeClick(obj) {
-    obj.name = "Name changed.";
-  }
-  /*
-  audience = ["Fyrik", "Koko"];
-  viewType = "other";
-  /*
-  title = 'ngdemo';
-  post = {
-    postTitle: "postTitle",
-    isFavorate: true
-  };
-
-  tweet = {
-    post: "...",
-    isLiked: false,
-    likesCount: 10
-  }
-
-  onFavorateChange(favorateBoolean: favObject) {
-    console.log("Favorate clicked: ", favorateBoolean.emitValue);
-  }
-*/
 }
