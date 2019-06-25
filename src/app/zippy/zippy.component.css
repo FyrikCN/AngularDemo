@@ -1,0 +1,15 @@
+.card-default {
+    width: 50%;
+}
+
+.card-header {
+    cursor: pointer;
+}
+
+.fas {
+    float: right;
+}
+
+.card-header {
+    display: inline-block;
+}

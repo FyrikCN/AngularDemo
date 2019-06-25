@@ -1,0 +1,9 @@
+<div class="card card-default">
+  <div class="card card-header" (click)='onHeaderClick()'>
+    {{ title }}
+    <span [class]="isActive? 'fas fa-angle-up' : 'fas fa-angle-down'"></span>
+  </div>
+  <div class="card card-body" [hidden]="!(isActive)">
+    <ng-content></ng-content>
+  </div>
+</div>

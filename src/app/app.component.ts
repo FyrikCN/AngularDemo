@@ -9,20 +9,5 @@ import { favObject } from './favorate/favorate.component';
 })
 export class AppComponent {
 
-  arrayOfObjs;
-  partlyEmptyObj = {
-    title: "title",
-    innerObj: {
-      name: "name"
-    }
-  };
-
-  getCourses() {
-    this.arrayOfObjs = [
-      {name: "Fyrik", gender: "male"},
-      {name: "Koko", gender: "female"},
-      {name: "Uzi", gender: "unknown"}
-    ];
-  }
 
 }
