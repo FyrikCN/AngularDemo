@@ -1,15 +1,23 @@
-.card-default {
+.zippy {
+    border: 1px solid #ccc;
+    border-radius: 2px;
     width: 50%;
 }
 
-.card-header {
+.zippy-heading {
+    font-weight: bold;
+    padding: 20px;
     cursor: pointer;
+}
+
+.zippy-body {
+    padding: 20px;
+}
+
+.expanded {
+    background-color: #f0f0f0;
 }
 
 .fas {
     float: right;
-}
-
-.card-header {
-    display: inline-block;
 }

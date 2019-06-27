@@ -1,21 +1,16 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'zippy',
   templateUrl: './zippy.component.html',
   styleUrls: ['./zippy.component.css']
 })
-export class ZippyComponent implements OnInit {
+export class ZippyComponent {
 
-  @Input('title') title;
-  @Input('isActive') isActive = true;
+  @Input('title') title: string;
+  isExpanded: boolean;
 
   onHeaderClick() {
-    this.isActive = !this.isActive;
+    this.isExpanded = !this.isExpanded;
   }
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

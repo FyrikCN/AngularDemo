@@ -1,9 +1,14 @@
-<div class="card card-default">
-  <div class="card card-header" (click)='onHeaderClick()'>
+<div class="zippy">
+  <div class="zippy-heading" (click)="onHeaderClick()" [class.expanded]="isExpanded">
     {{ title }}
-    <span [class]="isActive? 'fas fa-angle-up' : 'fas fa-angle-down'"></span>
+    <span class="fas"
+      [ngClass]="{
+        'fa-angle-up': isExpanded,
+        'fa-angle-down': !isExpanded
+      }"
+    ></span>
   </div>
-  <div class="card card-body" [hidden]="!(isActive)">
+  <div *ngIf="isExpanded" class="zippy-body">
     <ng-content></ng-content>
   </div>
 </div>
