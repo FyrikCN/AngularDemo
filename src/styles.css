@@ -9,3 +9,7 @@ body {
 .inputBox {
     margin-bottom: 20px;
 }
+
+.form-control.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
