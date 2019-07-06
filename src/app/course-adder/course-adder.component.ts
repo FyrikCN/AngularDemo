@@ -10,4 +10,9 @@ export class CourseAdderComponent {
   submit(f) {
     console.log(f);
   }
+
+  categories = [
+    { id: 1, name: "IT Development" },
+    { id: 2, name: "Art" }
+  ];
 }

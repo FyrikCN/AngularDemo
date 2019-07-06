@@ -1,39 +1,42 @@
 <form #f="ngForm" (ngSubmit)="submit(f)">
-  <div class="form-group">
-    <label for="courseName">Course Name:</label>
-    <input 
-    ngModel 
-    name="courseName" 
-    id="courseName"
-    #courseName="ngModel"
-    required 
-    type="text"
-    minlength="5"
-    class="form-control">
-    <div *ngIf="courseName.invalid && courseName.touched" class="alert alert-danger">
-      <div *ngIf="courseName.errors.required">
-        Course name is required.
-      </div>
-      <div *ngIf="courseName.errors.minlength">
-        Course name must have more than 5 characters.
+  <div ngModelGroup #ngform="ngModelGroup">
+    <div class="form-group">
+      <label for="courseName">Course Name:</label>
+      <input 
+      ngModel 
+      name="courseName" 
+      id="courseName"
+      #courseName="ngModel"
+      required 
+      type="text"
+      minlength="5"
+      class="form-control">
+      <div *ngIf="courseName.invalid && courseName.touched" class="alert alert-danger">
+        <div *ngIf="courseName.errors.required">
+          Course name is required.
+        </div>
+        <div *ngIf="courseName.errors.minlength">
+          Course name must have more than 5 characters.
+        </div>
       </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="categories">Category:</label>
-    <select ngModel name="categories" id="categories" class="form-control" #category="ngModel" required>
-      <option value="1">IT</option>
-      <option value="2">Art</option>
-    </select>
-    <div *ngIf="category.errors.required && category.touched">Category is required.</div>
-  </div>
-  <div class="form-group">
-    <label for="guarantee">
-      <input ngModel name="guarantee" #guarantee="ngModel" type="checkbox" id="guarantee">30 Day refund guarantee
-    </label>
+    <div class="form-group">
+      <label for="categories">Category:</label>
+      <select ngModel name="categories" id="categories" class="form-control" #category="ngModel" required>
+        <option *ngFor="let category of categories" value="category.id">
+          {{ category.name }}
+        </option>
+      </select>
+      <div *ngIf="!category.value && category.touched">Category is required.</div>
+    </div>
+    <div class="form-group">
+      <label for="guarantee">
+        <input ngModel name="guarantee" #guarantee="ngModel" type="checkbox" id="guarantee">30 Day refund guarantee
+      </label>
+    </div>
   </div>
   <p>
     {{ f.value | json }}
   </p>
-  <button class="btn btn-primary">Submit</button>
+  <button [disabled]="ngform.invalid" class="btn btn-primary">Submit</button>
 </form>
