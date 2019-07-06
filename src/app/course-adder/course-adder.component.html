@@ -1,4 +1,4 @@
-<form #f="ngForm" (ngSubmit)="submit(f)">
+<form #f="ngForm" (ngSubmit)="submit(f.value)">
   <div ngModelGroup #ngform="ngModelGroup">
     <div class="form-group">
       <label for="courseName">Course Name:</label>
@@ -16,14 +16,14 @@
           Course name is required.
         </div>
         <div *ngIf="courseName.errors.minlength">
-          Course name must have more than 5 characters.
+          Course name must have more than {{ courseName.errors.minlength.requiredLength }} characters.
         </div>
       </div>
     </div>
     <div class="form-group">
       <label for="categories">Category:</label>
       <select ngModel name="categories" id="categories" class="form-control" #category="ngModel" required>
-        <option *ngFor="let category of categories" value="category.id">
+        <option *ngFor="let category of categories" [value]="category.id">
           {{ category.name }}
         </option>
       </select>
