@@ -13,3 +13,5 @@ When declaring a field in [inputs] property under @Componentes, Angular creates 
 
 When the tree is small, use hidden property to load the whole tree to make toggle function faster.
 Otherwise, use ngIf to load a part of a tree as it's not so costly.
+
+When naming a javascript instance, hyper is not allowed as it is read as subtract operator.
