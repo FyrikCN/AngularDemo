@@ -15,3 +15,6 @@ When the tree is small, use hidden property to load the whole tree to make toggl
 Otherwise, use ngIf to load a part of a tree as it's not so costly.
 
 When naming a javascript instance, hyper is not allowed as it is read as subtract operator.
+
+How to remove a commit on Git:
+https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github
