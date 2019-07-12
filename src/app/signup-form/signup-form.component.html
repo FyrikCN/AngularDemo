@@ -10,6 +10,7 @@
             <div class="alert alert-danger" *ngIf="username.errors.required">Username is required.</div>
             <div class="alert alert-danger" *ngIf="username.errors.minlength">Username at least {{ username.errors.minlength.requiredLength }} characters.</div>
             <div class="alert alert-danger" *ngIf="username.errors.cannotContainSpace">Username can't contain spaces.</div>
+            <div class="alert alert-danger" *ngIf="username.errors.hasBeenTaken">Username has been taken.</div>
         </div>
     </div>
     <div class="form-group">
@@ -19,7 +20,10 @@
             id="password" 
             type="text" 
             class="form-control">
-        <div class="alert alert-danger" *ngIf="password.touched && password.invalid">Password is required.</div>
+        <div *ngIf="password.touched && password.invalid">
+            <div class="alert alert-danger" *ngIf="password.errors.required">Password is required.</div>
+            <div class="alert alert-danger" *ngIf="password.errors.cannotContainDot">Dot is not allowed at {{ password.errors.cannotContainDot.dotPosition }}.</div>
+        </div>
     </div>
     <button class="btn btn-primary" type="submit">Sign Up</button>
 </form>
