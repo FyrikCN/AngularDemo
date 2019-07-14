@@ -1,30 +1,32 @@
 <form [formGroup]="form" (ngSubmit)="login()">
     <div class="alert alert-danger" *ngIf="form.errors">The username or the password is invalid.</div>
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input 
-            formControlName="username"
-            id="username" 
-            type="text" 
-            class="form-control">
-        <i *ngIf="username.pending" class="fa fa-spinner fa-pulse"></i>
-        <div *ngIf="username.invalid && username.touched">
-            <div class="alert alert-danger" *ngIf="username.errors.required">Username is required.</div>
-            <div class="alert alert-danger" *ngIf="username.errors.minlength">Username at least {{ username.errors.minlength.requiredLength }} characters.</div>
-            <div class="alert alert-danger" *ngIf="username.errors.cannotContainSpace">Username can't contain spaces.</div>
-            <div class="alert alert-danger" *ngIf="username.errors.hasBeenTaken">Username has been taken.</div>
+    <div formGroupName="account">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input 
+                formControlName="username"
+                id="username" 
+                type="text" 
+                class="form-control">
+            <i *ngIf="username.pending" class="fa fa-spinner fa-pulse"></i>
+            <div *ngIf="username.invalid && username.touched">
+                <div class="alert alert-danger" *ngIf="username.errors.required">Username is required.</div>
+                <div class="alert alert-danger" *ngIf="username.errors.minlength">Username at least {{ username.errors.minlength.requiredLength }} characters.</div>
+                <div class="alert alert-danger" *ngIf="username.errors.cannotContainSpace">Username can't contain spaces.</div>
+                <div class="alert alert-danger" *ngIf="username.errors.hasBeenTaken">Username has been taken.</div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input 
-            formControlName="password"
-            id="password" 
-            type="text" 
-            class="form-control">
-        <div *ngIf="password.touched && password.invalid">
-            <div class="alert alert-danger" *ngIf="password.errors.required">Password is required.</div>
-            <div class="alert alert-danger" *ngIf="password.errors.cannotContainDot">Dot is not allowed at {{ password.errors.cannotContainDot.dotPosition }}.</div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                formControlName="password"
+                id="password" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="password.touched && password.invalid">
+                <div class="alert alert-danger" *ngIf="password.errors.required">Password is required.</div>
+                <div class="alert alert-danger" *ngIf="password.errors.cannotContainDot">Dot is not allowed at {{ password.errors.cannotContainDot.dotPosition }}.</div>
+            </div>
         </div>
     </div>
     <button class="btn btn-primary" type="submit">Sign Up</button>
