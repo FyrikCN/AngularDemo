@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormArray, FormControl } from '@angular/forms';
+import { FormGroup, FormArray, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'tag-adder',
@@ -7,9 +7,18 @@ import { FormGroup, FormArray, FormControl } from '@angular/forms';
   styleUrls: ['./tag-adder.component.css']
 })
 export class TagAdderComponent {
-  form = new FormGroup ({
-    tags: new FormArray ([])
-  })
+  form;
+
+  constructor (fb: FormBuilder) {
+    this.form = fb.group({
+      username: ['', Validators.required],
+      tags: fb.array([]),
+      contact: fb.group({
+        phone: [],
+        email:[]
+      })
+    })
+  }
 
   addTag(tag: HTMLInputElement) {
     this.tags.push(new FormControl(tag.value));
