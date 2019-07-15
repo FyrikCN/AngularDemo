@@ -19,6 +19,7 @@ import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { CourseAdderComponent } from './course-adder/course-adder.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { TagAdderComponent } from './tag-adder/tag-adder.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     InputFormatDirective,
     ZippyComponent,
     ContactFormComponent,
-    CourseAdderComponent
+    CourseAdderComponent,
+    TagAdderComponent
   ],
   imports: [
     BrowserModule,

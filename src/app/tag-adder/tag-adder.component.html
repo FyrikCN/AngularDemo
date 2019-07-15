@@ -1,0 +1,15 @@
+<form>
+  <input 
+      type="text" 
+      class="form-control"
+      (keyup.enter)="addTag(tag)"
+      #tag>
+  <ul class="list-group">
+      <li 
+          class="list-group-item" 
+          *ngFor="let tag of tags.controls"
+          (click)="deleteTag(tag)">
+          {{ tag.value }}
+      </li>
+  </ul>
+</form>
