@@ -20,6 +20,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { CourseAdderComponent } from './course-adder/course-adder.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { TagAdderComponent } from './tag-adder/tag-adder.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { TagAdderComponent } from './tag-adder/tag-adder.component';
     ZippyComponent,
     ContactFormComponent,
     CourseAdderComponent,
-    TagAdderComponent
+    TagAdderComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
