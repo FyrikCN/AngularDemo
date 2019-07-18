@@ -1,3 +1,4 @@
+import { PasswordValidators } from './password.validators';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -6,24 +7,24 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './change-password.component.html',
   styleUrls: ['./change-password.component.css']
 })
-export class ChangePasswordComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit { 
 
   form = new FormGroup({
-    oldPassword: new FormControl('', Validators.required),
+    oldPassword: new FormControl('', Validators.required, PasswordValidators.doesNotMatch),
     newPassword: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required)
   });
 
   oldPasswordCheck(oldPassword: FormControl) {
-    console.log("1");
   }
 
   newPasswordCheck(newPassword: FormControl) {
-    console.log("2");
   }
 
   confirmPasswordCheck(confirmPassword: FormControl) {
-    console.log("3");
+    if (confirmPassword.value == this.newPassword.value) {
+      console.log("match!");
+    }
   }
 
   get oldPassword() {
