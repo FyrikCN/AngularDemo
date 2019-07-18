@@ -18,3 +18,5 @@ When naming a javascript instance, hyper is not allowed as it is read as subtrac
 
 How to remove a commit on Git:
 https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github
+
+Ctrl + D to select a parameter in different places in HTML.

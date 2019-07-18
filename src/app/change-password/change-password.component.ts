@@ -1,31 +1,25 @@
 import { PasswordValidators } from './password.validators';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { passwordValidators } from '../signup-form/password.validators';
 
 @Component({
   selector: 'change-password',
   templateUrl: './change-password.component.html',
   styleUrls: ['./change-password.component.css']
 })
-export class ChangePasswordComponent implements OnInit { 
+export class ChangePasswordComponent { 
 
-  form = new FormGroup({
-    oldPassword: new FormControl('', Validators.required, PasswordValidators.doesNotMatch),
-    newPassword: new FormControl('', Validators.required),
-    confirmPassword: new FormControl('', Validators.required)
-  });
+  form: FormGroup;
 
-  oldPasswordCheck(oldPassword: FormControl) {
+  constructor(fb: FormBuilder) {
+    this.form = fb.group({
+      oldPassword: ['', Validators.required, PasswordValidators.validPassword],
+      newPassword: ['', Validators.required],
+      confirmPassword: ['', Validators.required]
+    }, { validator: PasswordValidators.matchPassword });
   }
 
-  newPasswordCheck(newPassword: FormControl) {
-  }
-
-  confirmPasswordCheck(confirmPassword: FormControl) {
-    if (confirmPassword.value == this.newPassword.value) {
-      console.log("match!");
-    }
-  }
 
   get oldPassword() {
     return this.form.get('oldPassword');
@@ -37,11 +31,6 @@ export class ChangePasswordComponent implements OnInit {
 
   get confirmPassword() {
     return this.form.get('confirmPassword');
-  }
-
-  constructor() { }
-
-  ngOnInit() {
   }
 
 }
