@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors.service';
 import { CoursesService } from './courses.service';
@@ -21,6 +22,7 @@ import { CourseAdderComponent } from './course-adder/course-adder.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { TagAdderComponent } from './tag-adder/tag-adder.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +41,15 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     ContactFormComponent,
     CourseAdderComponent,
     TagAdderComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     CoursesService,
