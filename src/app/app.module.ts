@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors.service';
@@ -49,7 +50,8 @@ import { PostComponent } from './post/post.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   providers: [
     CoursesService,

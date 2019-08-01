@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-post',
@@ -10,9 +10,10 @@ export class PostComponent {
   posts;
   private url = 'http://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     http.get(this.url).subscribe(response => {
-      this.posts = response.json();
+      this.posts = response;
+      console.log(response);
     });
 
   }
@@ -22,10 +23,9 @@ export class PostComponent {
     input.value = '';
     this.http.post(this.url, JSON.stringify(post))
       .subscribe(response => {
-        post['id'] = response.json().id;
+        post['id'] = response['id'];
         this.posts.splice(0, 0, post);
-        console.log(response.json());
+        console.log(post);
       })
   }
-
 }
