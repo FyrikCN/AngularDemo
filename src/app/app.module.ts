@@ -1,5 +1,5 @@
+import { PostService } from './services/post.service';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors.service';
 import { CoursesService } from './courses.service';
@@ -50,12 +50,12 @@ import { PostComponent } from './post/post.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
     HttpClientModule
   ],
   providers: [
     CoursesService,
-    AuthorsService
+    AuthorsService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })

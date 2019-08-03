@@ -20,3 +20,5 @@ How to remove a commit on Git:
 https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github
 
 Ctrl + D to select a parameter in different places in HTML.
+
+The benefits of separation of concerns: Extracting service things will make methods reusable; Fake server could be created to replace the real ones if unit tests are needed.
