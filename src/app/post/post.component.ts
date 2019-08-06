@@ -1,5 +1,7 @@
 import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
+import { AppError } from '../common/app-error';
+import { NotFoundError } from '../common/not-found-error';
 
 @Component({
   selector: 'app-post',
@@ -40,8 +42,8 @@ export class PostComponent implements OnInit{
           this.posts.splice(0, 0, post);
           console.log(post);
         }, 
-        error => {
-          if (error.status === 400) {
+        (error: AppError) => {
+          if (error instanceof NotFoundError) {
             // this.form.setErrors(error);
           }
           else {
